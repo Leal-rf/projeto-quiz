@@ -18,6 +18,17 @@ let timerInterval;
 let selectedCategory;
 let selectedDifficulty;
 
+const correctSound = document.getElementById('correct-sound');
+const timeUpSound = document.getElementById('time-up-sound');
+
+function playCorrectSound() {
+    correctSound.play();
+}
+
+function playTimeUpSound() {
+    timeUpSound.play();
+}
+
 const questions = {
     categoria1: {
         easy: [
@@ -119,6 +130,7 @@ function selectAnswer(e) {
     if (correct) {
         score++;
         feedbackElement.innerText = 'Correto!';
+        playCorrectSound();
     } else {
         feedbackElement.innerText = 'Errado!';
     }
@@ -154,6 +166,7 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             feedbackElement.innerText = 'Tempo esgotado!';
+            playTimeUpSound();
             feedbackElement.classList.remove('hide');
             Array.from(answerButtonsElement.children).forEach(button => {
                 button.disabled = true;
