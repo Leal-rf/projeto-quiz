@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-header">
+            <h1>Quiz Interativo</h1>
+            <div id="category-select">
+                <label for="category">Escolha a categoria:</label>
+                <select id="category">
+                    <option value="categoria1">Capitais de Países</option>
+                    <option value="categoria2">Tradução Correta</option>
+                </select>
+            </div>
+            <div id="difficulty-select">
+                <label for="difficulty">Escolha a dificuldade:</label>
+                <select id="difficulty">
+                    <option value="easy">Fácil</option>
+                    <option value="medium">Médio</option>
+                    <option value="hard">Difícil</option>
+                </select>
+            </div>
+            <button id="start-btn">Começar</button>
+        </div>
+        
+        <div id="quiz" class="hide">
+            <div id="question-container">
+                <div id="question">Pergunta</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Resposta 1</button>
+                    <button class="btn">Resposta 2</button>
+                    <button class="btn">Resposta 3</button>
+                    <button class="btn">Resposta 4</button>
+                </div>
+            </div>
+            <div id="feedback" class="hide"></div>
+            <div id="timer">Tempo restante: <span id="time">30</span>s</div>
+            <button id="next-btn" class="hide">Próxima</button>
+        </div>
+        
+        <div id="result" class="hide">
+            <h2>Resultado Final</h2>
+            <p id="final-score"></p>
+            <button id="restart-btn">Reiniciar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
